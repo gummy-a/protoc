@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package message;
+
+option go_package = "protoc/pb";
+
+message StringMessage {
+  string content = 1;
+  int32 id = 2;
+}
+
+service StringService {
+  rpc Echo(StringMessage) returns (StringMessage);
+}
